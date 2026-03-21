@@ -4,44 +4,50 @@ local tick = Config.UpdateTick or 100
 
 -- Stil holen. // get style.
 CreateThread(function()
-    Wait(1000)
+    Wait(100)
     SendNUIMessage({
         action = "setStyle",
         style = Config.Style or "glass"
     })
 end)
 
+CreateThread(function()
+    Wait(100)
+    SendNUIMessage({
+        action = "setShape",
+        style = Config.Shape or "rounded"
+    })
+end)
+
 -- Haupt Schleife // main loop
-Citizen.CreateThread(function()
+CreateThread(function()
     while true do
         local sleep = 500
         local ped = PlayerPedId()
-        local veh = GetVehiclePedIsIn(ped, false)
+        local vehicle = GetVehiclePedIsIn(ped, false)
 
-        if veh ~= 0 and not IsPauseMenuActive() then
-            sleep = tick
-            local speed = GetEntitySpeed(veh)
-            local rpm = GetVehicleCurrentRpm(veh)
-            if not GetIsVehicleEngineRunning(veh) then
-                rpm = 0
-            end
-                
-            -- Berechnung für KMH (3.6) oder MPH (2.236). // calculation for KMH (3.6) or MPH (2.236).
-            local finalSpeed = (unit == "KMH" and speed * 3.6 or speed * 2.236936)
-                
+        if vehicle ~= 0 and GetIsVehicleEngineRunning(vehicle) then
+            sleep = Config.UpdateTick or 100
+            
+            local speed = GetEntitySpeed(vehicle)
+            local displaySpeed = (Config.Unit == "KMH") and (speed * 3.6) or (speed * 2.236936)
+            local fuel = GetVehicleFuelLevel(vehicle) -- Nutze GetVehicleFuelLevel oder dein Fuel-System Export
+            
             SendNUIMessage({
                 type = "updateVehicleHud",
-                show = true,
-                speed = finalSpeed,
-                rpm = rpm,
-                fuel = GetVehicleFuelLevel(veh),
-                gear = GetVehicleCurrentGear(veh)
+                show = not IsPauseMenuActive(),
+                speed = displaySpeed,
+                rpm = GetVehicleCurrentRpm(vehicle),
+                gear = GetVehicleCurrentGear(vehicle),
+                fuel = fuel
             })
         else
-            SendNUIMessage({ type = "updateVehicleHud", show = false })
-            sleep = 1000
+            SendNUIMessage({
+                type = "updateVehicleHud",
+                show = false
+            })
         end
-        Citizen.Wait(sleep)
+        Wait(sleep)
     end
 end)
 
