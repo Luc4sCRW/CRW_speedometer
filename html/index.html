@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" id="hud-style" href="">
+    <link rel="stylesheet" id="hud-shape" href="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -40,6 +41,17 @@ window.addEventListener('message', function(event){
             styleEl.href = "glass-style.css";
         } else if(event.data.style === "clean"){
             styleEl.href = "clean-style.css";
+        }
+    }
+});
+        
+window.addEventListener('message', function(event){
+    if(event.data.action === "setShape"){
+        const styleEl = document.getElementById("hud-shape");
+        if(event.data.style === "rounded"){
+            styleEl.href = "rounded-style.css";
+        } else if(event.data.style === "squared"){
+            styleEl.href = "squared-style.css";
         }
     }
 });
