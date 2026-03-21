@@ -1,8 +1,8 @@
 Config = {}
 
-Config.Unit = "KMH" -- "KMH" oder "MPH"
+Config.Unit = "KMH" -- MPH/KMH
 Config.Style = "glass" -- clean/glass
-Config.UpdateTick = 100 -- Intervall in ms (100ms ist flüssig und performant)
+Config.UpdateTick = 100 -- Aktualisierungsrate // refresh rate
 
 Config.Colors = {
     rpm = "#ffffff",
