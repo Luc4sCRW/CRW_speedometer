@@ -1,0 +1,15 @@
+#speedo-container {
+    border-radius: 20px;
+}
+
+#gear {
+    border-radius: 10px;
+}
+
+.rpm-bar-container {
+    border-radius: 3.5px;
+}
+
+.fuel-bar-container {
+    border-radius: 2px;
+}
