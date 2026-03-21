@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" id="hud-style" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="speedo-container">
+        <div class="main-info">
+            <div id="gear">N</div>
+            <div class="speed-box">
+                <span id="speed">000</span>
+                <span id="unit">KM/H</span>
+            </div>
+        </div>
+
+        <div class="stats-box">
+    <div class="fuel-wrapper">
+        <i class="fas fa-gas-pump"></i>
+        <div class="fuel-bar-container">
+            <div id="fuel-bar"></div>
+        </div>
+    </div>
+
+    <div class="rpm-wrapper">
+        <div class="rpm-bar-container">
+            <div id="rpm-bar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+	<script>
+        // Empfange Style von Lua
+window.addEventListener('message', function(event){
+    if(event.data.action === "setStyle"){
+        const styleEl = document.getElementById("hud-style");
+        if(event.data.style === "glass"){
+            styleEl.href = "glass-style.css";
+        } else if(event.data.style === "clean"){
+            styleEl.href = "clean-style.css";
+        }
+    }
+});
+    </script>
+</body>
+</html>
