@@ -16,5 +16,7 @@ files {
     'html/index.html',
     'html/glass-style.css',
     'html/clean-style.css',
+    'html/squared-style.css',
+    'html/rounded-style.css',
     'html/script.js'
 }
