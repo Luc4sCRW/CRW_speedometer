@@ -19,9 +19,9 @@ Ein simples GTA V HUD-Script, das die aktuelle **Geschwindigkeit**, den **Gang**
 
 # 🚀 Installation
 
-1. Lege den Ordner `CRW_Speedometer` in deinen `resources/` Ordner.
+1. Lege den Ordner `CRW_speedometer` in deinen `resources/` Ordner.
 2. Füge folgendes in deine `server.cfg`:
- `            ensure CRW_Speedometer           `
+ `            ensure CRW_speedometer           `
 3. Passe die *config.lua* nach deinen Wünschen an (Einheiten, Style, Form, Update-Tick).
 
 
@@ -42,9 +42,9 @@ A simple GTA V HUD script that displays the current **speed**, **gear**, **RPM**
 
 # 🚀 Installation
 
-1. Place the `CRW_Speedometer` folder in your `resources/` folder.
+1. Place the `CRW_speedometer` folder in your `resources/` folder.
 2. Add the following to your `server.cfg`:
- `            ensure CRW_Speedometer           `
+ `            ensure CRW_speedometer           `
 3. Customize *config.lua* to your liking (units, style, shape, update tick).
 
 
