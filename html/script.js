@@ -10,22 +10,20 @@ window.addEventListener('message', function(event) {
             // Speed
             document.getElementById('speed').innerText = Math.floor(data.speed).toString().padStart(3, '0');
 
-            // RPM Balken (0.0 bis 1.0)
+            // RPM
             const rpmPercent = data.rpm * 100;
             const rpmBar = document.getElementById('rpm-bar');
             rpmBar.style.width = rpmPercent + "%";
-
-            // Redline Effekt ab 85%
             if (rpmPercent > 85) {
                 rpmBar.classList.add('redline');
             } else {
                 rpmBar.classList.remove('redline');
             }
 
-            // Tank Balken
+            // Fuelbar
             document.getElementById('fuel-bar').style.width = data.fuel + "%";
 
-            // Gang
+            // Gearbopx
             let gear = data.gear;
             const gearElement = document.getElementById('gear');
             if (gear === 0) {
