@@ -53,8 +53,7 @@ A simple GTA V HUD script that displays the current **speed**, **gear**, **RPM**
 
 # UPDATES
 
-Updates for scripts are always announced on the Discord server. So feel free to join the Discord server to stay up to date. - I wont use the “Releases” feature of GitHub.
--> Future updates will most likely improve the script's performance or introduce a new design (perhaps a real speedometer like the one in a car)
+Updates for scripts are always announced on the Discord server. So feel free to join the Discord server to stay up to date. -> Future update contains more funcitons like indicator or a seatbelt.
 
 Next Update will include indicator and seatbelt.
 
