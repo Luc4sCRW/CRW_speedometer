@@ -1,4 +1,4 @@
-# 📍 CRW_speedometer | v1.0.0 -> DOWNLOAD v2.0.0!
+# 📍 CRW_speedometer | v1.0.0 -> DOWNLOAD v2.1.0!
 
 ‼️ ***YOU CAN CHANGE THE CODE, BUT YOU ARE NOT ALLOWED TO REUPLOAD THE HUD TO ANY PLATFORM!*** ‼️
 
